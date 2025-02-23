@@ -4,14 +4,14 @@ Overview
 
 Features
 
-1. Create orders, get order details and track their status.
-2. Payment integration for each order.
-3. Redis caching for efficient state management.
-4. Order status tracking with various stages (e.g., Pending, Paid).
-5. Scalable and maintainable design.
-6. Create users and get user details.
-7. Metrics api to get all the orders and to get all orders of a particular user.
-8. Get latency of all orders as well as get order status counts.
+    1. Create orders, get order details and track their status.
+    2. Payment integration for each order.
+    3. Redis caching for efficient state management.
+    4. Order status tracking with various stages (e.g., Pending, Paid).
+    5. Scalable and maintainable design.
+    6. Create users and get user details.
+    7. Metrics api to get all the orders and to get all orders of a particular user.
+    8. Get latency of all orders as well as get order status counts.
 
 Architecture
 
@@ -23,6 +23,7 @@ Architecture
     LoadTestService: Tests load on the server for thousand of requests at a time.
 
 Project Structure
+
 ```bash
 src/main/java/com/example/ecommerce/
 │── controller/
@@ -71,24 +72,33 @@ Prerequisites:
 
 Build the project:
 
-./mvnw clean install or mvn if you haven maven install
+    ./mvnw clean install or mvn if you haven maven install
 
 Run the application:
 
-./mvnw spring-boot:run
+    ./mvnw spring-boot:run
 
-API Endpoints --- I have added postaman schema in ecommerce folder
+API Endpoints 
 
-Database Schema --- I have added schema.sql in resource folder
+    I have added postaman schema in ecommerce folder
 
-Redis Caching -- used for caching and also for the payments status update
+Database Schema 
 
-The application utilizes Redis to cache payment transaction status for faster response times. Redis operations are handled by the RedisService class.
+    I have added schema.sql in resource folder
+
+Redis Caching 
+
+    used for caching and also for the payments status update
+
+Seperation From Others
+
+    The application utilizes Redis to cache payment transaction status for faster response times. Redis operations are handled by the RedisService class.
 
 Future Enhancements
-Add user authentication and authorization.
-Implement retry mechanisms for payment failures.
-Add detailed error handling and logging.
-Create table for items.
-Correct table names due to some conflict and use small letters in all the table and column names.
-Add test cases.
+
+    Add user authentication and authorization.
+    Implement retry mechanisms for payment failures.
+    Add detailed error handling and logging.
+    Create table for items.
+    Correct table names due to some conflict and use small letters in all the table and column names.
+    Add test cases.
