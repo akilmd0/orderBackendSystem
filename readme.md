@@ -23,7 +23,7 @@ Architecture
     LoadTestService: Tests load on the server for thousand of requests at a time.
 
 Project Structure
-
+```bash
 src/main/java/com/example/ecommerce/
 │── controller/
 │   ├── OrderController.java     # Handles incoming API requests
@@ -55,7 +55,7 @@ src/main/java/com/example/ecommerce/
 │   ├── RedisConfiguration.java       # Handles Redis-related operations
 │
 │── EcommerceApplication.java   # Main entry point of the application
-
+```
 Installation:
 
 Prerequisites:
