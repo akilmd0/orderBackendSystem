@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "dc2bd9a8-a9ff-4990-9e9a-b8cc77ed7361",
+		"name": "Ecommerce Order API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19478041"
+	},
+	"item": [
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": \"8b6c9ce5-096e-4cf7-aef6-7b90c26830f1\",\n  \"itemIds\": [\n    \"c7dbb13f-eb23-4c52-a86c-fbbd5c30ee54\"\n  ],\n  \"totalAmount\": 100.50\n}\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "craete-user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"mobNumber\": \"9876543210\"\n}\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/:orderId",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders by User ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/getAll/:userId",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"getAll",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/:orderId/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						":orderId",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "orderId"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTotalOrderMetrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/metrics/totalOrders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"metrics",
+						"totalOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "averageOrderTime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/metrics/avgProcessingTime",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"metrics",
+						"avgProcessingTime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "statusCounts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders/metrics/statusCounts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders",
+						"metrics",
+						"statusCounts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
